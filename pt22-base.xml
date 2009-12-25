@@ -14,12 +14,6 @@
      <splash-texture>Aircraft/Ryan-PT22/pt22-splash.png</splash-texture>
     </startup>
 
-    <systems>
-      <electrical>
-        <path>Aircraft/j3cub/cub-electrical.xml</path>
-      </electrical>
-    </systems> 
-
     <sound>
       <path>Aircraft/Ryan-PT22/Sounds/pt22-sound.xml</path>
     </sound>
@@ -51,18 +45,6 @@
 
   </sim>
 
-  <yasim>
-    <la5>
-      <pilot-lb>180</pilot-lb>
-    </la5>
-  </yasim>
-
-  <engines>
-    <engine>
-      <rpm type="double">700</rpm>
-    </engine>
-  </engines>
-
   <input>
     <keyboard include="Nasal/pt22-keyboard.xml"/>
   </input>
@@ -72,6 +54,7 @@
       <file>Aircraft/Ryan-PT22/Nasal/doors.nas</file>
       <file>Aircraft/Ryan-PT22/Nasal/immat.nas</file>
       <file>Aircraft/Ryan-PT22/Nasal/liveries.nas</file>
+      <file>Aircraft/Ryan-PT22/Nasal/light.nas</file>
     </pt22>
   </nasal>
 

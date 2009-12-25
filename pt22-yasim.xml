@@ -31,17 +31,18 @@
 
   <cockpit x="0.050" y="0" z="0.632"/>
 
-  <fuselage ax="3.452" ay="0" az="0.079" bx="-3.461" by="0" bz="0.079" width="0.757" taper="0.5" midpoint="0.5"/>
+  <fuselage ax="3.452" ay="0" az="0.161" bx="-3.461" by="0" bz="0.079" width="0.757" taper="0.5" midpoint="0.5"/>
 
   <wing x="0.975" y="0.345" z="-0.199"
         chord="1.447"
         length="4.243"
         taper="1"
         dihedral="5"
-        camber="0.24">
+        sweep="5"
+        camber="0.282">
         <stall aoa="14" width="4" peak="1.5"/>
-        <flap0 start="0.092" end="0.471" lift="1.5" drag="1.2"/>
-        <flap1 start="0.471" end="1.000" lift="1.2" drag="1.3"/>
+        <flap0 start="0.092" end="0.520" lift="1.5" drag="1.2"/>
+        <flap1 start="0.520" end="1.000" lift="1.2" drag="1.3"/>
 
         <control-input axis="/controls/flight/flaps" control="FLAP0"/>
         <control-speed control="FLAP0" transition-time="5"/>
@@ -70,7 +71,8 @@
 
   <vstab x="-2.642" y="0" z="0.112"
          chord="1.522"
-         length="1.508"
+         length="1.3"
+         sweep="10"
          taper="0.55">
          <stall aoa="15" width="4" peak="1.5"/>
          <flap0 start="0" end="1" lift="1.3" drag="1.2"/>
@@ -93,19 +95,19 @@
                  Propeller diameter: 2.46 m
                  Reduction gear    : 
 
-             gear-ratio="0.5625"
+                 gear-ratio="0.5625"
   -->
-  <propeller x="3.029" y="0" z="0.079"
+  <propeller x="2.967" y="0" z="0.161"
              radius="1.23"
              mass="330"
-             moment="75"
+             moment="2.5"
              cruise-alt="15000"
              cruise-power="113"
              cruise-speed="105"
              cruise-rpm="1800"
              min-rpm="150"
              max-rpm="1850">
-             <actionpt x="3.932" y="0" z="0.079"/>
+             <actionpt x="3.294" y="0" z="0.161"/>
              <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE" />
              <piston-engine eng-power="160"
                             eng-rpm="1850"
@@ -119,25 +121,34 @@
   </propeller>
 
   <gear x="1.878" y="1.002" z="-1.415"
-        compression="0.2">
+        compression="0.20"
+        spring="0.6"
+        dfric="0.6"
+        sfric ="0.70">
         <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   </gear>
 
   <gear x="1.878" y="-1.002" z="-1.415"
-        compression="0.2">
+        compression="0.20"
+        spring="0.6"
+        dfric="0.6"
+        sfric ="0.70">
         <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   </gear>
 
   <gear x="-2.664" y="0" z="-0.448"
-        compression="0.2">
+        compression="0.15"
+        spring="0.6"
+        dfric="0.6"
+        sfric ="0.70">
         <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0=".25" dst1="-.25"/>
   </gear>
 
   <tank x="1.101" y="0.000" z="-0.355" capacity="884"/>
 
-  <!-- CG théorique x=0.975 y=0 z=-0.293 -->
+  <!-- CG theorique x=0.975 y=0 z=-0.293 -->
   <ballast x="0.3" y="0" z="-1" mass="1000"/>
 
 </airplane>
