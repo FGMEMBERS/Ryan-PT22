@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Ryan PT 22 : 2009 BARANGER Emmanuel 
+
+     source       : http://en.wikipedia.org/wiki/PT-22_Recruit
+                    http://www.aerospacemuseum.org/exhibits/aircraft_april.html
+
+     Envergure    : 9.17 m      ( 30 ft 1.0 in )
+     Longueur     : 6.9 m       ( 22 ft 7.5 in )
+     Hauteur      : 2.18 m      (  7 ft 2.0 in )
+     Empty weight : 683.68 kg   ( 1507 lbs )
+     Cruise speed : 160.93 km/h (  105 kts )
+     Moteur       : Kinner R-540, 160 cv
+-->
+
+<airplane mass="1507">
+
+  <approach speed="50" aoa="7" fuel="0.2">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.0"/>
+    <control-setting axis="/controls/flight/flaps" value="1.0"/>
+  </approach>
+
+  <cruise speed="105" alt="15000">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
+    <control-setting axis="/controls/flight/flaps" value="0.0"/>
+  </cruise>
+
+  <cockpit x="0.050" y="0" z="0.632"/>
+
+  <fuselage ax="3.452" ay="0" az="0.161" bx="-3.461" by="0" bz="0.079" width="0.757" taper="0.5" midpoint="0.5"/>
+
+  <wing x="0.975" y="0.345" z="-0.199"
+        chord="1.447"
+        length="4.243"
+        taper="1"
+        dihedral="5"
+        sweep="5"
+        camber="0.282">
+        <stall aoa="14" width="4" peak="1.5"/>
+        <flap0 start="0.092" end="0.520" lift="1.5" drag="1.2"/>
+        <flap1 start="0.520" end="1.000" lift="1.2" drag="1.3"/>
+
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+        <control-speed control="FLAP0" transition-time="5"/>
+
+        <control-output control="FLAP0" prop="/surface-positions/flaps-pos-norm"/>
+
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+  </wing>
+
+  <hstab x="-2.522" y="0" z="0.118"
+         chord="1.258"
+         length="1.453"
+         taper="0.56">
+         <stall aoa="17" width="4" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.8" drag="1.8"/>
+
+         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-2.642" y="0" z="0.112"
+         chord="1.522"
+         length="1.3"
+         sweep="10"
+         taper="0.55">
+         <stall aoa="15" width="4" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.3" drag="1.2"/>
+
+         <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+  </vstab>
+
+  <!-- Engines   source            : http://en.wikipedia.org/wiki/Kinner_K-5
+                                     http://wapedia.mobi/en/Kinner_R-5
+
+                 name              : Kinner R-540
+                 type              : five cylinder radial engine
+                 power cruise      : 160hp at 1,850 RPM max / 113hp at 1,800 RPM cruise
+                 weight            : 330lb (149.6 kg)
+                 Displacement      : 540cu in (8.85 L)
+                 Compression       : 5.50:1
+                 Propeller diameter: 2.46 m
+                 Reduction gear    : 
+
+                 gear-ratio="0.5625"
+  -->
+  <propeller x="2.967" y="0" z="0.161"
+             radius="1.23"
+             mass="330"
+             moment="2.5"
+             cruise-alt="15000"
+             cruise-power="113"
+             cruise-speed="105"
+             cruise-rpm="1800"
+             min-rpm="150"
+             max-rpm="1850">
+             <actionpt x="3.294" y="0" z="0.161"/>
+             <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE" />
+             <piston-engine eng-power="160"
+                            eng-rpm="1850"
+                            displacement="540"
+                            compression="5.50">
+                            <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+                            <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
+                            <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
+                            <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+             </piston-engine>
+  </propeller>
+
+  <gear x="1.878" y="1.002" z="-1.415"
+        compression="0.20"
+        spring="0.6"
+        dfric="0.6"
+        sfric ="0.70">
+        <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  </gear>
+
+  <gear x="1.878" y="-1.002" z="-1.415"
+        compression="0.20"
+        spring="0.6"
+        dfric="0.6"
+        sfric ="0.70">
+        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+  </gear>
+
+  <gear x="-2.664" y="0" z="-0.448"
+        compression="0.15"
+        spring="0.6"
+        dfric="0.6"
+        sfric ="0.70">
+        <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0=".25" dst1="-.25"/>
+  </gear>
+
+  <tank x="1.101" y="0.000" z="-0.355" capacity="884"/>
+
+  <!-- CG theorique x=0.975 y=0 z=-0.293 -->
+  <ballast x="0.3" y="0" z="-1" mass="1000"/>
+
+</airplane>

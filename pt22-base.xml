@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <author>BARANGER Emmanuel (3D/FDM)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>0.8</fuel-fraction>
+
+    <startup>
+     <splash-texture>Aircraft/Ryan-PT22/pt22-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path>Aircraft/Ryan-PT22/Sounds/pt22-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/Ryan-PT22/Models/pt22.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>Ryan PT 22</title>
+    </help>
+
+    <menubar include="Dialogs/pt22-menu.xml"/>
+
+  </sim>
+
+  <input>
+    <keyboard include="Nasal/pt22-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <pt22>
+      <file>Aircraft/Ryan-PT22/Nasal/doors.nas</file>
+      <file>Aircraft/Ryan-PT22/Nasal/immat.nas</file>
+      <file>Aircraft/Ryan-PT22/Nasal/liveries.nas</file>
+      <file>Aircraft/Ryan-PT22/Nasal/light.nas</file>
+    </pt22>
+  </nasal>
+
+</PropertyList>
+

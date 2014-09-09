@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList include="pt22-base.xml">
+
+  <sim>
+
+    <description>Ryan PT 22 (YASim)</description>
+    <flight-model>yasim</flight-model>
+    <aero>pt22-yasim</aero>
+
+  </sim>
+  
+</PropertyList>
