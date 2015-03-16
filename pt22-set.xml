@@ -1,12 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!-- <PropertyList include="pt22-jsbsim-cnf.xml"> -->
-<PropertyList include="pt22-yasim-cnf.xml">
+<PropertyList include="pt22-base.xml">
 
   <sim>
+
     <description>Ryan PT 22 (YASim)</description>
     <author>Emmanuel BARANGER (3D/FDM)</author>
+
+    <flight-model>yasim</flight-model>
+    <aero>pt22-yasim</aero>
+
+    <rating>
+      <FDM type="int">     3 </FDM>
+      <systems type="int"> 1 </systems>
+      <cockpit type="int"> 3 </cockpit>
+      <model type="int">   4 </model>
+    </rating>
+
   </sim>
 
 </PropertyList>
-
