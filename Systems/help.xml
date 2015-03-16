@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <title>Ryan PT 22</title>
+  <key>
+    <name>d</name>
+    <desc>Open/Close canpy</desc>
+  </key>
+  
+  <key>
+    <name>e</name>
+    <desc>Guns fire</desc>
+  </key>
+
+</PropertyList>
